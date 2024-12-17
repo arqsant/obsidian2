@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería con Enlaces a Obsidian</title>
+  <style>
+    .gallery {
+      --n: 3; /* number of rows */
+      --m: 3; /* number of columns */
+      --s: 150px; /* control the size */
+      --g: 10px;  /* control the gap */
+      --f: 1.5;   /* control the scale factor */
+      
+      display: grid;
+      gap: var(--g);
+      width:  calc(var(--m) * var(--s) + (var(--m) - 1) * var(--g));
+      height: calc(var(--n) * var(--s) + (var(--n) - 1) * var(--g));
+      grid-template-columns: repeat(var(--m), auto);
+    }
+
+    .gallery > a {
+      display: block;
+      width: var(--s);
+      height: var(--s);
+      overflow: hidden;
+    }
+
+    .gallery > a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(80%);
+      transition: 0.35s linear;
+    }
+
+    .gallery > a img:hover {
+      filter: grayscale(0);
+      width: calc(var(--s) * var(--f));
+      height: calc(var(--s) * var(--f));
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-content: center;
+      background: #252732;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <!-- Enlaces a las notas de Obsidian -->
+      <img src="https://arqsant.github.io/obsidian2/6.jpg" alt="Biblioteca Fortaleza">
+      <img src="https://arqsant.github.io/obsidian2/3.png" alt="Biblioteca Oasis">
+      <img src="https://arqsant.github.io/obsidian2/2.png" alt="Edificio Buganvilia 130">
+      <img src="https://arqsant.github.io/obsidian2/1.png" alt="Edificio Eucalipto 262">
+      <img src="https://arqsant.github.io/obsidian2/4.jpg" alt="House22">
+      <img src="https://picsum.photos/id/1016/300/300" alt="Edificio Buganvilia 130">
+      <img src="https://picsum.photos/id/1015/300/300" alt="Edificio Eucalipto 262">
+      <img src="https://picsum.photos/id/1020/300/300" alt="House22">
+  </div>
+</body>
+</html>
