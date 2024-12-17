@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería Animada</title>
+  <style>
+    .gallery {
+      --n: 1; /* number of rows*/
+      --m: 5; /* number of columns */
+      --g: 0px;  /* control the gap */
+      --f: .8;   /* control the scale factor */
+      
+      display: grid;
+      gap: var(--g);
+      width: 100vw;
+      height: 100vh;
+      grid-template-columns: repeat(var(--m),auto);
+    }
+
+    .gallery > a {
+      display: block;
+    }
+
+    .gallery > a > img {
+      width: 0;
+      height: 0;
+      min-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      filter: grayscale(80%);
+      transition: .35s linear;
+    }
+
+    .gallery img:hover {
+      filter: grayscale(0);
+      width:  calc(100vh * var(--f) / var(--n));
+      height: calc(100vw * var(--f) / var(--m));
+    }
+
+    body {
+      margin: 0;
+      background: #60c4ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <a href="obsidian://open?vault=ARQSANT&file=Biblioteca%20Fortaleza">
+      <img src="https://arqsant.github.io/obsidian2/6.jpg" alt="Biblioteca Fortaleza">
+    </a>
+    <a href="obsidian://open?vault=ARQSANT&file=Biblioteca%20Oasis">
+      <img src="https://arqsant.github.io/obsidian2/3.png" alt="Biblioteca Oasis">
+    </a>
+    <a href="obsidian://open?vault=ARQSANT&file=Edificio%20Buganvilia%20130">
+      <img src="https://arqsant.github.io/obsidian2/2.png" alt="Edificio Buganvilia 130">
+    </a>
+    <a href="obsidian://open?vault=ARQSANT&file=Edificio%20Eucalipto%20262">
+      <img src="https://arqsant.github.io/obsidian2/3.png" alt="Edificio Eucalipto 262">
+    </a>
+    <a href="obsidian://open?vault=ARQSANT&file=House22">
+      <img src="https://arqsant.github.io/obsidian2/4.jpg" alt="House22">
+    </a>
+  </div>
+</body>
+</html>
